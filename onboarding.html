@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ברוכים הבאים לקופון ישראל</title>
+<meta name="description" content="התוסף קופון ישראל הותקן בהצלחה. כך משתמשים בו, ומה כדאי לעשות כדי לנצל אותו עד הסוף.">
+
+<!--
+  ============================================================
+  הגדרות לפני פרסום — ערכו את אובייקט CONFIG בתחתית הקובץ (תגית <script>):
+  1. CONTACT_FORM_URL   – לינק לטופס Google Forms ליצירת קשר
+  2. CONTACT_EMAIL      – אימייל גיבוי, ישמש אם אין טופס מוגדר
+  3. ADD_STORE_FORM_URL – לינק לטופס הוספת חנות / קופון
+  4. STORE_URL          – לינק לעמוד התוסף בחנות Chrome
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --blue-deep:#1565C0;
+    --blue-mid:#1976D2;
+    --blue-bright:#42A5F5;
+    --blue-pale:#90CAF9;
+    --bg:#F8F9FA;
+    --white:#ffffff;
+    --ink:#102A43;
+    --ink-soft:#486581;
+    --line:#D9E6F5;
+    --radius:18px;
+    --shadow:0 10px 28px rgba(21,101,192,.14);
+    --maxw:920px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Rubik',sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;}
+  a{color:var(--blue-deep);}
+
+  h1,h2,h3{
+    font-family:'Suez One',serif;
+    font-weight:400;
+    margin:0;
+    color:var(--ink);
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  /* ---------- header ---------- */
+  header.site{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+  .site-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:1.05rem;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .brand .tag-icon{width:30px;height:30px;}
+  nav.quick{
+    display:flex;
+    gap:18px;
+    font-size:.92rem;
+  }
+  nav.quick a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    padding-bottom:2px;
+    transition:color .15s, border-color .15s;
+  }
+  nav.quick a:hover{color:var(--blue-deep);border-color:var(--blue-pale);}
+
+  /* ---------- ticket card (signature element) ---------- */
+  .ticket{
+    position:relative;
+    background:var(--white);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    margin:0 0 28px;
+  }
+  .ticket-stub{
+    background:linear-gradient(135deg,var(--blue-deep),var(--blue-mid));
+    color:var(--white);
+    padding:18px 28px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .ticket-stub .eyebrow{
+    font-size:.82rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    opacity:.92;
+  }
+  .ticket-divider{
+    position:relative;
+    height:0;
+    border-top:2px dashed var(--blue-pale);
+    margin:0;
+  }
+  .ticket-divider::before,
+  .ticket-divider::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:26px;height:26px;
+    background:var(--bg);
+    border-radius:50%;
+  }
+  .ticket-divider::before{right:-13px;}
+  .ticket-divider::after{left:-13px;}
+  .ticket-body{padding:30px 28px 34px;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:48px 0 8px;}
+  .hero h1{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:14px;}
+  .hero p.lede{
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    max-width:64ch;
+    margin:0;
+  }
+  .hero-icon{
+    width:46px;height:46px;
+    background:rgba(255,255,255,.18);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  /* ---------- section heading ---------- */
+  .section-heading{margin:8px 0 22px;}
+  .section-heading h2{font-size:clamp(1.3rem,3vw,1.7rem);}
+  .section-heading p{color:var(--ink-soft);margin:6px 0 0;}
+
+  /* ---------- steps ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:40px;
+  }
+  .step .ticket-stub{padding:16px 20px;justify-content:flex-start;}
+  .step .num{font-family:'Suez One',serif;font-size:1.5rem;}
+  .step .ticket-body{padding:20px 20px 26px;}
+  .step h3{font-size:1.05rem;margin-bottom:8px;}
+  .step p{font-size:.93rem;color:var(--ink-soft);margin:0;}
+
+  @media (max-width:760px){
+    .steps{grid-template-columns:1fr;}
+  }
+
+  /* ---------- pin section ---------- */
+  .pin-card{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    background:var(--white);
+    border:1.5px solid var(--blue-pale);
+    border-radius:var(--radius);
+    padding:26px 26px;
+    margin-bottom:40px;
+  }
+  .pin-icon{
+    flex-shrink:0;
+    width:54px;height:54px;
+    border-radius:14px;
+    background:rgba(21,101,192,.08);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pin-card h2{font-size:1.25rem;margin-bottom:8px;}
+  .pin-card p{color:var(--ink-soft);font-size:.95rem;margin:0 0 14px;max-width:60ch;}
+  .pin-steps{
+    margin:0;
+    padding-inline-start:20px;
+    display:grid;
+    gap:6px;
+    font-size:.92rem;
+    color:var(--ink);
+  }
+  .pin-steps li strong{color:var(--blue-deep);}
+  @media (max-width:600px){
+    .pin-card{flex-direction:column;}
+  }
+
+  /* ---------- add-store section ---------- */
+  .addstore-card{
+    background:var(--white);
+    border:1.5px dashed var(--blue-pale);
+    border-radius:var(--radius);
+    padding:28px 28px;
+    margin-bottom:40px;
+    text-align:center;
+  }
+  .addstore-card h2{font-size:1.25rem;margin-bottom:10px;}
+  .addstore-card p{color:var(--ink-soft);font-size:.95rem;margin:0 auto 18px;max-width:56ch;}
+
+  .btn{
+    display:inline-block;
+    background:var(--blue-deep);
+    color:var(--white);
+    font-weight:700;
+    font-size:.95rem;
+    padding:12px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:transform .12s, box-shadow .12s;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(21,101,192,.22);}
+  .btn-outline{
+    background:transparent;
+    color:var(--blue-deep);
+    border:2px solid var(--blue-deep);
+  }
+  .btn-white{background:var(--white);color:var(--blue-deep);}
+
+  /* ---------- contact ---------- */
+  .contact-card{
+    background:linear-gradient(135deg,var(--blue-deep),var(--blue-bright));
+    border-radius:var(--radius);
+    color:var(--white);
+    padding:32px 28px;
+    margin-bottom:24px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+  }
+  .contact-card h2{color:var(--white);font-size:1.4rem;margin-bottom:6px;}
+  .contact-card p{margin:0;opacity:.92;max-width:46ch;}
+
+  .disclosure{
+    background:var(--white);
+    border:1px dashed var(--blue-pale);
+    border-radius:14px;
+    padding:18px 22px;
+    font-size:.86rem;
+    color:var(--ink-soft);
+    margin-bottom:40px;
+  }
+  .disclosure strong{color:var(--ink);}
+
+  footer.site{
+    border-top:1px solid var(--line);
+    padding:22px 0 40px;
+    text-align:center;
+    font-size:.82rem;
+    color:var(--ink-soft);
+  }
+  footer.site a{color:var(--ink-soft);text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-bar">
+    <a class="brand" href="#top">
+      <svg class="tag-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 24V9a3 3 0 0 1 3-3h15l18 18-18 18-18-18Z" fill="#1565C0"/>
+        <circle cx="16" cy="16" r="4" fill="#fff"/>
+      </svg>
+      קופון ישראל
+    </a>
+    <nav class="quick">
+      <a href="terms.html">תנאי שימוש ומדיניות פרטיות</a>
+      <a href="#contact">יצירת קשר</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <section class="hero">
+    <div class="ticket">
+      <div class="ticket-stub">
+        <div class="hero-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12 12 3l9 9-9 9-9-9Z" stroke="#fff" stroke-width="1.6"/>
+            <circle cx="9" cy="9" r="2" fill="#fff"/>
+          </svg>
+        </div>
+        <span class="eyebrow">ההתקנה הושלמה</span>
+      </div>
+      <div class="ticket-divider"></div>
+      <div class="ticket-body">
+        <h1>ברוכים הבאים לקופון ישראל</h1>
+        <p class="lede">
+          תודה על שהתקנתם את התוסף! קופון ישראל כבר פעיל ברקע: בכל פעם שתיכנסו לאתר קניות
+          נבדוק אם יש קופונים ומבצעים מתאימים, ונציג לכם אותם בנוחות — גם דרך אייקון התוסף
+          בסרגל הכלים, וגם בעמוד הקופה.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="section-heading">
+      <h2>איך זה עובד</h2>
+      <p>שלושה שלבים פשוטים, בלי הגדרות מסובכות.</p>
+    </div>
+    <div class="steps">
+      <article class="step ticket">
+        <div class="ticket-stub"><span class="num">1</span></div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-body">
+          <h3>גלשו לאתר הקנייה</h3>
+          <p>היכנסו לאתר שבו אתם רוצים לקנות או להזמין — בדיוק כמו תמיד, אין צורך בהגדרה מוקדמת.</p>
+        </div>
+      </article>
+      <article class="step ticket">
+        <div class="ticket-stub"><span class="num">2</span></div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-body">
+          <h3>בדקו את אייקון התוסף</h3>
+          <p>אם החנות נתמכת, אייקון התוסף בסרגל הכלים יציג קופונים ומבצעים זמינים. אפשר לצפות בהם, להיכנס לקישורי המבצעים ולהעתיק קופונים בכל שלב בגלישה.</p>
+        </div>
+      </article>
+      <article class="step ticket">
+        <div class="ticket-stub"><span class="num">3</span></div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-body">
+          <h3>בעמוד הקופה</h3>
+          <p>באנר קטן יתריע שיש קופון מתאים. לחיצה עליו פותחת תפריט בשדה הקופון, שם ניתן להחיל או להדביק את הקוד — וההנחה תתעדכן אוטומטית בעגלה.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pin">
+    <div class="pin-card">
+      <div class="pin-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <rect x="4" y="4" width="16" height="16" rx="3" stroke="#1565C0" stroke-width="1.6"/>
+          <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="#1565C0" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <h2>נעצו את התוסף לנוחות מקסימלית</h2>
+        <p>
+          כשהתוסף נעוץ (Pin) לסרגל הכלים, האייקון נשאר תמיד גלוי — ולא מוסתר בתפריט התוספים.
+          האייקון גם מציג מספר קטן שאומר כמה קופונים זמינים באתר שבו אתם נמצאים, כך שתדעו במבט
+          אחד אם יש הנחה, בלי לפתוח כלום.
+        </p>
+        <ol class="pin-steps">
+          <li>לחצו על <strong>סמל הפאזל</strong> (תוספים) בסרגל הכלים של Chrome</li>
+          <li>מצאו את <strong>"קופון ישראל"</strong> ברשימה, ולחצו על סמל ה<strong>נעיצה (Pin)</strong> שלצידו</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="add-store">
+    <div class="addstore-card">
+      <h2>רוצים שנוסיף חנות או קופון?</h2>
+      <p>
+        מצאתם קוד הנחה שלא מופיע בתוסף, או חנות שעדיין לא נתמכת? אפשר להגיש בקשה בקלות,
+        ואנחנו נבדוק ונוסיף בהקדם.
+      </p>
+      <a class="btn btn-outline" id="addStoreBtn" href="#" target="_blank" rel="noopener">הגשת בקשה להוספת חנות / קופון</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-card">
+      <div>
+        <h2>יש לכם שאלה או הצעה?</h2>
+        <p>נשמח לשמוע — באג שמצאתם, קופון שלא עבד, או סתם רעיון לשיפור.</p>
+      </div>
+      <a class="btn btn-white" id="contactBtn" href="#" target="_blank" rel="noopener">פתיחת טופס יצירת קשר</a>
+    </div>
+
+    <div class="disclosure">
+      <strong>גילוי נאות:</strong> חלק מהקישורים והקופונים המוצגים בתוסף ובעמוד זה הם קישורי שיווק (affiliate).
+      אנחנו עשויים לקבל עמלה מהחנות בעת שימוש בהם, ללא כל השפעה על המחיר שאתם משלמים.
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>
+      <a href="terms.html">תנאי שימוש ומדיניות פרטיות</a> ·
+      <a href="#contact">יצירת קשר</a>
+    </p>
+    <p>© 2026 קופון ישראל. כל הזכויות שמורות.</p>
+  </div>
+</footer>
+
+<script>
+  // ============================================================
+  // CONFIG — מלאו כאן את הפרטים שלכם לפני פרסום העמוד
+  // ============================================================
+  const CONFIG = {
+    CONTACT_FORM_URL: "https://forms.gle/i2QVGtDnQ6gMVhi38",
+    CONTACT_EMAIL: "shopxisrael@gmail.com",
+    ADD_STORE_FORM_URL: "https://forms.gle/N864VmdfbvdxFF7H8",
+    STORE_URL: ""   // עדכנו כשהתוסף יעלה לחנות Chrome
+  };
+
+  document.getElementById('contactBtn').href =
+    CONFIG.CONTACT_FORM_URL || ('mailto:' + CONFIG.CONTACT_EMAIL);
+
+  document.getElementById('addStoreBtn').href = CONFIG.ADD_STORE_FORM_URL;
+</script>
+
+</body>
+</html>

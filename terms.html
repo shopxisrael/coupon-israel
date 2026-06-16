@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>תנאי שימוש ומדיניות פרטיות — קופון ישראל</title>
+<meta name="description" content="מדיניות הפרטיות ותנאי השימוש של תוסף קופון ישראל.">
+
+<!--
+  ============================================================
+  הגדרות לפני פרסום — ערכו את אובייקט CONFIG בתחתית הקובץ:
+  1. CONTACT_FORM_URL – לינק לטופס Google Forms ליצירת קשר
+  2. CONTACT_EMAIL    – אימייל גיבוי
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --blue-deep:#1565C0;
+    --blue-mid:#1976D2;
+    --blue-bright:#42A5F5;
+    --blue-pale:#90CAF9;
+    --bg:#F8F9FA;
+    --white:#ffffff;
+    --ink:#102A43;
+    --ink-soft:#486581;
+    --line:#D9E6F5;
+    --radius:18px;
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Rubik',sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue-deep);}
+  h1,h2{font-family:'Suez One',serif;font-weight:400;margin:0;color:var(--ink);}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  header.site{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+  .site-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:14px 0;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;
+  }
+  .brand svg{width:30px;height:30px;}
+  nav.quick{display:flex;gap:18px;font-size:.92rem;}
+  nav.quick a{color:var(--ink-soft);text-decoration:none;}
+  nav.quick a:hover{color:var(--blue-deep);}
+
+  .intro{padding:40px 0 6px;}
+  .intro h1{font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:10px;}
+  .intro p{color:var(--ink-soft);max-width:62ch;margin:0;}
+
+  .pagejump{
+    display:flex;gap:10px;margin:22px 0 8px;flex-wrap:wrap;
+  }
+  .pagejump a{
+    font-size:.86rem;font-weight:600;
+    background:var(--white);
+    border:1.5px solid var(--blue-pale);
+    color:var(--blue-deep);
+    padding:7px 16px;
+    border-radius:999px;
+    text-decoration:none;
+  }
+  .pagejump a:hover{background:var(--blue-pale);}
+
+  main{padding:18px 0 50px;}
+
+  .legal-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 28px 34px;
+    margin-bottom:28px;
+    scroll-margin-top:90px;
+  }
+  .legal-card h2{font-size:1.35rem;margin-bottom:6px;}
+  .legal-card .updated{font-size:.8rem;color:var(--ink-soft);margin-bottom:18px;display:block;}
+  .legal-card h3{
+    font-family:'Rubik',sans-serif;font-weight:700;font-size:.97rem;
+    color:var(--blue-deep);margin:20px 0 6px;
+  }
+  .legal-card p, .legal-card li{font-size:.94rem;color:var(--ink-soft);margin:0 0 8px;}
+  .legal-card ul{margin:0 0 8px;padding-inline-start:20px;}
+  .legal-card strong{color:var(--ink);}
+
+  .pill{
+    display:inline-block;background:var(--blue-pale);color:var(--blue-deep);
+    font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:999px;margin-bottom:14px;
+  }
+
+  footer.site{
+    border-top:1px solid var(--line);
+    padding:22px 0 40px;text-align:center;font-size:.82rem;color:var(--ink-soft);
+  }
+  footer.site a{color:var(--ink-soft);text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-bar">
+    <a class="brand" href="onboarding.html">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 24V9a3 3 0 0 1 3-3h15l18 18-18 18-18-18Z" fill="#1565C0"/>
+        <circle cx="16" cy="16" r="4" fill="#fff"/>
+      </svg>
+      קופון ישראל
+    </a>
+    <nav class="quick">
+      <a href="onboarding.html">חזרה לעמוד הבית</a>
+      <a id="contactNavLink" href="#" target="_blank" rel="noopener">יצירת קשר</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="intro">
+    <h1>תנאי שימוש ומדיניות פרטיות</h1>
+    <p>כל מה שצריך לדעת על האופן שבו תוסף "קופון ישראל" עובד, ומה אנחנו עושים (ולא עושים) עם המידע שלכם.</p>
+    <div class="pagejump">
+      <a href="#privacy">מדיניות פרטיות</a>
+      <a href="#terms">תנאי שימוש</a>
+    </div>
+  </div>
+
+  <div class="legal-card" id="privacy">
+    <span class="pill">מדיניות פרטיות</span>
+    <h2>מדיניות הפרטיות שלנו</h2>
+    <span class="updated">עודכן לאחרונה: יוני 2026</span>
+
+    <p>
+      מדיניות זו מסבירה אילו נתונים תוסף "קופון ישראל" אוסף, איך הם משמשים אותנו,
+      ומה <strong>לא</strong> נאסף בשום מקרה.
+    </p>
+
+    <h3>מה אנחנו אוספים</h3>
+    <ul>
+      <li><strong>שם הדומיין</strong> של האתר שבו אתם גולשים (לדוגמה <em>example.co.il</em>) — לא כתובת ה-URL המלאה ולא תוכן הדף.</li>
+      <li>נתוני שימוש אנונימיים בתוסף עצמו: למשל אם נמצא קופון, ואם נעשה בו שימוש — בלי לקשר את הפעולה לזהות שלכם.</li>
+    </ul>
+
+    <h3>איך המידע משמש</h3>
+    <p>
+      שם הדומיין נשלח לבסיס הנתונים שלנו, המנוהל באמצעות שירות Supabase, כדי לבדוק אם קיים קופון
+      רלוונטי לאותו אתר ולהחזיר אותו לתוסף. זו הדרך היחידה שבה התוסף "יודע" אילו קופונים להציע לכם.
+    </p>
+
+    <h3>מה אנחנו לא אוספים</h3>
+    <ul>
+      <li>שום מידע מזהה אישית (PII): לא שם, לא אימייל, לא כתובת ולא מספר טלפון.</li>
+      <li>שום פרט תשלום, מספרי כרטיס אשראי או נתוני חשבון בנק.</li>
+      <li>היסטוריית גלישה מלאה — רק שם הדומיין הרלוונטי לבדיקת קופונים, ורק כשהתוסף פעיל.</li>
+    </ul>
+
+    <h3>שיתוף עם צדדים שלישיים</h3>
+    <p>
+      איננו מוכרים ואיננו משתפים את הנתונים עם גורמי שיווק או פרסום. הספק היחיד המעורב הוא Supabase,
+      המשמש כספק תשתית האחסון שלנו, ופועל לפי מדיניות האבטחה שלו.
+    </p>
+
+    <h3>הרשאות התוסף</h3>
+    <p>
+      התוסף מבקש הרשאות גישה מינימליות הנדרשות לזיהוי עמוד הקופה והצגת הבאנר — לדוגמה גישה לכרטיסייה
+      הפעילה ואחסון מקומי להעדפות בסיסיות. ההרשאות מפורטות גם בעמוד התוסף בחנות Chrome.
+    </p>
+
+    <h3>קישורי שיווק (Affiliate)</h3>
+    <p>
+      חלק מהקופונים המוצגים בתוסף מקושרים לתוכניות שיווק (affiliate). כשמשתמשים בקוד כזה, אנחנו
+      עשויים לקבל עמלה מהחנות — מבלי שזה משנה את המחיר שאתם משלמים.
+    </p>
+
+    <h3>שינויים במדיניות</h3>
+    <p>נוכל לעדכן מדיניות זו מעת לעת. שינויים מהותיים יפורסמו בעמוד זה עם תאריך עדכון חדש.</p>
+
+    <h3>יצירת קשר</h3>
+    <p>שאלות בנושא פרטיות? אפשר לפנות אלינו דרך טופס יצירת הקשר שבתפריט העליון.</p>
+  </div>
+
+  <div class="legal-card" id="terms">
+    <span class="pill">תנאי שימוש</span>
+    <h2>תנאי שימוש</h2>
+    <span class="updated">עודכן לאחרונה: יוני 2026</span>
+
+    <p>
+      השימוש בתוסף "קופון ישראל" מהווה הסכמה לתנאים הבאים. אם אינכם מסכימים לתנאי כלשהו —
+      אנא הסירו את התוסף.
+    </p>
+
+    <h3>תיאור השירות</h3>
+    <p>
+      התוסף מציג קודי קופון והנחות שנאספו עבור אתרי קניות בישראל, ומאפשר החלה אוטומטית שלהם
+      בעמוד הקופה. אנחנו עושים מאמץ לשמור על מידע מעודכן, אך לא מבטיחים שכל קופון יהיה תקף
+      בכל רגע נתון — תוקף הקופונים נקבע על ידי החנות המפעילה אותם, ולא על ידינו.
+    </p>
+
+    <h3>שימוש מותר</h3>
+    <ul>
+      <li>השימוש בתוסף הוא לצורך אישי ולא מסחרי.</li>
+      <li>אין לעשות הנדסה לאחור, להעתיק או להפיץ את קוד התוסף ללא רשות.</li>
+      <li>אין לעשות שימוש לרעה בתוסף באופן שעלול לפגוע בשירות, בספקי הנתונים שלנו או במשתמשים אחרים.</li>
+    </ul>
+
+    <h3>קישורי שיווק וגילוי נאות</h3>
+    <p>
+      חלק מהקופונים מקושרים לתוכניות שיווק. הדבר אינו משפיע על איזה קופון מוצג לכם, ואינו מעלה
+      את המחיר באתר היעד.
+    </p>
+
+    <h3>הגבלת אחריות</h3>
+    <p>
+      קופון ישראל אינו צד לעסקה בין המשתמש לבין אתר הקניות. אנחנו לא אחראים לתוקף הקופון,
+      למחיר הסופי, לזמינות המוצר, למשלוח או לכל עניין אחר הקשור לעסקה עצמה. השימוש בתוסף הוא
+      על אחריותכם בלבד, "as is", ללא אחריות מכל סוג.
+    </p>
+
+    <h3>שינויים בשירות</h3>
+    <p>אנחנו עשויים לעדכן, לשנות או להפסיק תכונות בתוסף בכל עת, ללא הודעה מוקדמת.</p>
+
+    <h3>דין חל</h3>
+    <p>תנאים אלו כפופים לחוקי מדינת ישראל.</p>
+
+    <h3>יצירת קשר</h3>
+    <p>לשאלות על התנאים, ניתן לפנות דרך טופס יצירת הקשר שבתפריט העליון.</p>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><a href="onboarding.html">חזרה לעמוד הבית</a></p>
+    <p>© 2026 קופון ישראל. כל הזכויות שמורות.</p>
+  </div>
+</footer>
+
+<script>
+  const CONFIG = {
+    CONTACT_FORM_URL: "https://forms.gle/i2QVGtDnQ6gMVhi38",
+    CONTACT_EMAIL: "shopxisrael@gmail.com"
+  };
+  document.getElementById('contactNavLink').href =
+    CONFIG.CONTACT_FORM_URL || ('mailto:' + CONFIG.CONTACT_EMAIL);
+</script>
+
+</body>
+</html>

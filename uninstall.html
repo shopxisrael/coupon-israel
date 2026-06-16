@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>עזבתם? נשמח לדעת למה — קופון ישראל</title>
+<meta name="description" content="התוסף קופון ישראל הוסר. עזרו לנו להשתפר בשיתוף משוב קצר.">
+
+<!--
+  ============================================================
+  הגדרות לפני פרסום — ערכו את אובייקט CONFIG בתחתית הקובץ (תגית <script>):
+  1. UNINSTALL_FORM_URL – לינק לטופס Google Forms למשוב הסרה (אופציונלי)
+  2. CONTACT_EMAIL      – אימייל לקבלת המשוב כשאין טופס מוגדר (mailto fallback)
+  3. STORE_URL          – לינק לעמוד התוסף בחנות Chrome, לחזרה עתידית
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --blue-deep:#1565C0;
+    --blue-mid:#1976D2;
+    --blue-bright:#42A5F5;
+    --blue-pale:#90CAF9;
+    --bg:#F8F9FA;
+    --white:#ffffff;
+    --ink:#102A43;
+    --ink-soft:#486581;
+    --line:#D9E6F5;
+    --radius:18px;
+    --shadow:0 10px 28px rgba(21,101,192,.14);
+    --maxw:680px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Rubik',sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  a{color:var(--blue-deep);}
+  h1,h2{font-family:'Suez One',serif;font-weight:400;margin:0;color:var(--ink);}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;width:100%;}
+
+  header.site{padding:24px 0 0;}
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-weight:700;color:var(--ink);text-decoration:none;
+    font-size:.98rem;
+  }
+  .brand svg{width:26px;height:26px;}
+
+  main{flex:1;padding:28px 0 50px;}
+
+  .ticket{
+    position:relative;
+    background:var(--white);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .ticket-stub{
+    background:linear-gradient(135deg,var(--blue-deep),var(--blue-mid));
+    color:var(--white);
+    padding:18px 28px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .ticket-stub .eyebrow{font-size:.82rem;font-weight:600;opacity:.92;}
+  .ticket-divider{
+    position:relative;height:0;border-top:2px dashed var(--blue-pale);
+  }
+  .ticket-divider::before,.ticket-divider::after{
+    content:"";position:absolute;top:50%;transform:translateY(-50%);
+    width:26px;height:26px;background:var(--bg);border-radius:50%;
+  }
+  .ticket-divider::before{right:-13px;}
+  .ticket-divider::after{left:-13px;}
+  .ticket-body{padding:30px 28px 32px;}
+
+  h1{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:12px;}
+  .subhead{color:var(--ink-soft);font-size:1rem;margin:0 0 28px;max-width:48ch;}
+
+  fieldset{border:none;padding:0;margin:0 0 22px;}
+  legend{
+    font-weight:700;font-size:.95rem;margin-bottom:12px;padding:0;
+  }
+
+  .options{display:flex;flex-direction:column;gap:10px;}
+  .option{
+    display:block;
+    position:relative;
+  }
+  .option input{
+    position:absolute;
+    opacity:0;
+    width:1px;height:1px;
+  }
+  .option span{
+    display:block;
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    padding:12px 16px;
+    font-size:.93rem;
+    color:var(--ink);
+    cursor:pointer;
+    transition:border-color .12s, background .12s;
+  }
+  .option input:checked + span{
+    border-color:var(--blue-deep);
+    background:rgba(21,101,192,.06);
+    font-weight:600;
+  }
+  .option input:focus-visible + span{
+    outline:2px solid var(--blue-bright);
+    outline-offset:2px;
+  }
+
+  textarea{
+    width:100%;
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    padding:12px 14px;
+    font-family:'Rubik',sans-serif;
+    font-size:.93rem;
+    color:var(--ink);
+    resize:vertical;
+    min-height:90px;
+  }
+  textarea:focus{outline:2px solid var(--blue-bright);outline-offset:1px;border-color:var(--blue-deep);}
+  label.field-label{
+    display:block;
+    font-weight:700;
+    font-size:.95rem;
+    margin-bottom:8px;
+  }
+
+  .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:8px;}
+  .btn{
+    background:var(--blue-deep);
+    color:var(--white);
+    font-weight:700;
+    font-size:.95rem;
+    padding:13px 26px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    transition:transform .12s, box-shadow .12s, background .12s;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(21,101,192,.28);background:var(--blue-mid);}
+  .btn[disabled]{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none;}
+
+  .hint{font-size:.82rem;color:var(--ink-soft);}
+
+  .thankyou{
+    display:none;
+    text-align:center;
+    padding:10px 0 6px;
+  }
+  .thankyou.show{display:block;}
+  .thankyou h2{font-size:1.3rem;margin-bottom:8px;}
+  .thankyou p{color:var(--ink-soft);margin:0;}
+
+  .come-back{
+    margin-top:30px;
+    text-align:center;
+    font-size:.9rem;
+    color:var(--ink-soft);
+  }
+  .come-back a{font-weight:700;}
+  .store-comeback{
+    margin-top:10px;
+    text-align:center;
+    font-size:.9rem;
+    color:var(--ink-soft);
+  }
+  .store-comeback a{font-weight:700;}
+
+  footer.site{
+    text-align:center;
+    font-size:.82rem;
+    color:var(--ink-soft);
+    padding:0 0 30px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 24V9a3 3 0 0 1 3-3h15l18 18-18 18-18-18Z" fill="#1565C0"/>
+        <circle cx="16" cy="16" r="4" fill="#fff"/>
+      </svg>
+      קופון ישראל
+    </a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="ticket">
+    <div class="ticket-stub">
+      <span class="eyebrow">התוסף הוסר</span>
+    </div>
+    <div class="ticket-divider"></div>
+    <div class="ticket-body">
+
+      <div id="formView">
+        <h1>מצטערים לראות אתכם עוזבים</h1>
+        <p class="subhead">
+          לפני שתמשיכו — נשמח לדעת מה לא עבד. זה לוקח חצי דקה, ועוזר לנו לשפר את התוסף
+          למשתמשים הבאים.
+        </p>
+
+        <form id="feedbackForm">
+          <fieldset>
+            <legend>מה הביא אתכם להסיר את התוסף?</legend>
+            <div class="options" id="optionsGroup">
+              <label class="option">
+                <input type="radio" name="reason" value="לא מצאתי קופונים רלוונטיים">
+                <span>לא מצאתי קופונים רלוונטיים</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="reason" value="יותר מדי פרסומות / באנרים">
+                <span>יותר מדי פרסומות / באנרים</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="reason" value="נתקלתי בבאג טכני">
+                <span>נתקלתי בבאג טכני</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="reason" value="פשוט אין לי יותר צורך בתוסף">
+                <span>פשוט אין לי יותר צורך בתוסף</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="reason" value="אחר">
+                <span>אחר</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div id="detailField">
+            <label class="field-label" for="detail">רוצים לפרט? (לא חובה)</label>
+            <textarea id="detail" name="detail" placeholder="כל פרט עוזר לנו להבין מה לשפר..."></textarea>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn" id="submitBtn" disabled>שליחת משוב</button>
+            <span class="hint">הבחירה שלך לא תזהה אותך באופן אישי.</span>
+          </div>
+        </form>
+      </div>
+
+      <div class="thankyou" id="thankyouView">
+        <h2>תודה על המשוב!</h2>
+        <p>זה ממש עוזר לנו להשתפר. אם יהיה לכם רגע בעתיד, נשמח לראותכם חוזרים.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="come-back">
+    יש לכם שאלה דחופה או רעיון לפני שתלכו?
+    <a id="contactLink" href="#" target="_blank" rel="noopener">אפשר לכתוב לנו ישירות</a>.
+  </p>
+
+  <p class="store-comeback" id="storeComeback" style="display:none;">
+    שיניתם את דעתכם? התוסף תמיד כאן —
+    <a id="storeLink" href="#" target="_blank" rel="noopener">חזרה לעמוד התוסף בחנות Chrome</a>.
+  </p>
+</main>
+
+<footer class="site">
+  <p>תודה שניסיתם את קופון ישראל.</p>
+</footer>
+
+<script>
+  // ============================================================
+  // CONFIG — מלאו כאן את הפרטים שלכם לפני פרסום העמוד
+  //
+  // איך המשוב נשלח, בלי backend:
+  // לעמוד הזה אין שרת משלו, אז יש שתי דרכים אפשריות לקבל את המשוב:
+  //
+  // אופציה A (פעילה כברירת מחדל, אינה דורשת הגדרה):
+  //   נפתחת תוכנת המייל של המשתמש עם הודעה מוכנה מראש אליכם (כתובת CONTACT_EMAIL),
+  //   והמשתמש עדיין צריך ללחוץ "שלח" בעצמו. עובד תמיד, בלי שום הגדרה בגוגל פורמס.
+  //
+  // אופציה B (שקטה — בלי לפתוח שום דבר, אך דורשת הגדרה חד-פעמית):
+  //   שליחה ישירה לטופס Google Forms באמצעות קריאת fetch ל-formResponse endpoint שלו.
+  //   כדי להפעיל: 1) צרו טופס Google Forms עם שדה לסיבה ושדה לפירוט חופשי.
+  //   2) בתפריט שלוש הנקודות של הטופס בחרו "קבלת קישור עם תשובות מוכנות מראש",
+  //      מלאו תשובות לדוגמה ולחצו "קבלת קישור". בתוך הקישור שתקבלו יופיעו פרמטרים
+  //      כמו entry.123456789=... — המספר הזה הוא ה-entry ID של אותו שדה.
+  //   3) מלאו את שלושת השדות למטה (FORM_ACTION_URL, REASON_ENTRY_ID, DETAIL_ENTRY_ID).
+  //      כשהם מוגדרים, הטופס יישלח בשקט בלי לפתוח כרטיסייה חדשה למשתמש.
+  // ============================================================
+  const CONFIG = {
+    CONTACT_EMAIL: "shopxisrael@gmail.com",
+    STORE_URL: "",                 // לינק לעמוד התוסף בחנות Chrome — עדכנו כשהתוסף יעלה
+
+    // אופציה B (אופציונלי) — השאירו ריק כדי להישאר עם שליחת מייל (אופציה A)
+    FORM_ACTION_URL: "",     // לדוגמה: "https://docs.google.com/forms/d/e/XXXXXXX/formResponse"
+    REASON_ENTRY_ID: "",     // לדוגמה: "entry.123456789"
+    DETAIL_ENTRY_ID: ""      // לדוגמה: "entry.987654321"
+  };
+
+  const contactLink = document.getElementById('contactLink');
+  contactLink.href = 'mailto:' + CONFIG.CONTACT_EMAIL;
+
+  const storeComeback = document.getElementById('storeComeback');
+  if (CONFIG.STORE_URL) {
+    document.getElementById('storeLink').href = CONFIG.STORE_URL;
+    storeComeback.style.display = 'block';
+  }
+
+  const optionsGroup = document.getElementById('optionsGroup');
+  const submitBtn = document.getElementById('submitBtn');
+  const detailInput = document.getElementById('detail');
+
+  optionsGroup.addEventListener('change', () => {
+    submitBtn.disabled = false;
+  });
+
+  const form = document.getElementById('feedbackForm');
+  const formView = document.getElementById('formView');
+  const thankyouView = document.getElementById('thankyouView');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const reason = (form.querySelector('input[name="reason"]:checked') || {}).value || '';
+    const detail = detailInput.value.trim();
+
+    const useGoogleForm = CONFIG.FORM_ACTION_URL && CONFIG.REASON_ENTRY_ID;
+
+    if (useGoogleForm) {
+      // שליחה שקטה לגוגל פורמס — לא נפתחת כרטיסייה, אין צורך באישור מהמשתמש.
+      const data = new FormData();
+      data.append(CONFIG.REASON_ENTRY_ID, reason);
+      if (CONFIG.DETAIL_ENTRY_ID) data.append(CONFIG.DETAIL_ENTRY_ID, detail);
+      try {
+        await fetch(CONFIG.FORM_ACTION_URL, { method: 'POST', mode: 'no-cors', body: data });
+      } catch (err) {
+        // גם אם ה-fetch נכשל בשקט (no-cors חוסם קריאת תשובה בכל מקרה), נמשיך להצגת תודה.
+      }
+    } else {
+      // ברירת מחדל: פתיחת תוכנת המייל עם הודעה מוכנה מראש.
+      const subject = encodeURIComponent('משוב הסרת התקנה - קופון ישראל');
+      const body = encodeURIComponent('סיבה: ' + reason + '\n\nפירוט: ' + (detail || '-'));
+      window.location.href = 'mailto:' + CONFIG.CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
+    }
+
+    formView.style.display = 'none';
+    thankyouView.classList.add('show');
+  });
+</script>
+
+</body>
+</html>

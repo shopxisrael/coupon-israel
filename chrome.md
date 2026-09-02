@@ -74,6 +74,27 @@
 
 ---
 
+## לשונית Privacy — סוגי הנתונים הנאספים
+
+הקטגוריות שיש לסמן ב-"What user data do you plan to collect", ומה מצדיק
+כל אחת:
+
+| קטגוריה | מסומן | הנתון |
+|---|---|---|
+| Website content | ✅ | סכום הסל וסכום ההנחה, הנקראים מעמוד הקופה |
+| Web history | ✅ | שם הדומיין ומקטע הנתיב הראשון של העמוד, לבדיקת קיום קופון |
+| Financial and payment information | ✅ | סכום ההזמנה וסכום ההנחה בעמוד אישור הזמנה |
+| Personally identifiable information | ✖ | לא נאסף |
+| Health information | ✖ | לא נאסף |
+| Authentication information | ✖ | לא נאסף |
+| Personal communications | ✖ | לא נאסף |
+| Location | ✖ | לא נאסף |
+| User activity | ✖ | לא מתועדים קליקים, גלילה, מיקום עכבר או הקשות |
+
+הסימון צריך להתאים לגילוי איסוף הנתונים בתיאור ולטבלה ב-`terms.html`.
+
+---
+
 ## מה הטקסטים חייבים לכסות
 
 רשימת בדיקה לפני כל עדכון. כל שורה כאן צריכה להיות נכונה לגרסה שעולה.

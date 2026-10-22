@@ -2,8 +2,9 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#2F6BEB">
 <title>גישה מוקדמת לאפליקציית קופון</title>
 <meta name="description" content="30 המשתתפים הראשונים מקבלים גישה מוקדמת לאפליקציית קופון לאנדרואיד.">
 <meta property="og:type" content="website">
@@ -18,110 +19,131 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --blue-deep:#1565C0; --blue-mid:#1976D2; --blue-pale:#90CAF9;
-    --bg:#F8F9FA; --white:#ffffff; --ink:#102A43; --ink-soft:#486581;
-    --line:#D9E6F5; --radius:18px; --maxw:760px;
+    --b1:#3472F0; --b2:#1B4AB8; --blue:#1F57D6;
+    --ink:#102A43; --ink-soft:#486581; --line:#D9E6F5; --white:#fff;
+    --maxw:640px;
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{background:var(--bg);color:var(--ink);font-family:'Rubik',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;}
-  a{color:var(--blue-deep);}
-  h1,h2{font-family:'Suez One',serif;font-weight:400;margin:0;color:var(--ink);}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
-  header.site{background:var(--white);border-bottom:1px solid var(--line);}
-  .site-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;}
-  .brand svg{width:30px;height:30px;}
-  nav.quick a{color:var(--ink-soft);text-decoration:none;font-size:.92rem;}
-  .hero{padding:44px 0 8px;}
-  .pill{display:inline-block;background:var(--blue-pale);color:var(--blue-deep);font-size:.8rem;font-weight:600;padding:4px 14px;border-radius:999px;margin-bottom:14px;}
-  .hero h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.2;margin-bottom:12px;}
-  .hero p{color:var(--ink-soft);margin:0 0 6px;max-width:58ch;font-size:1.02rem;}
-  .perks{list-style:none;margin:18px 0 6px;padding:0;display:grid;gap:10px;max-width:520px;}
-  .perks li{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-weight:600;color:var(--ink);}
-  .perks li::before{content:"✓";flex:none;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blue-deep);color:#fff;font-size:.95rem;}
-  .cta-main{display:inline-block;margin:18px 0 4px;background:var(--blue-deep);color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem;padding:14px 30px;border-radius:999px;}
-  .sticky{display:none;}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 8px;padding:0;list-style:none;}
-  .steps li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;font-size:.94rem;color:var(--ink-soft);}
-  .steps b{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--blue-deep);color:#fff;font-size:.9rem;margin-bottom:8px;}
-  .steps strong{display:block;color:var(--ink);margin-bottom:2px;}
-  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px 24px;margin:22px 0;}
-  .card h2{font-size:1.3rem;margin-bottom:6px;}
-  .card p{margin:0 0 10px;color:var(--ink-soft);font-size:.94rem;}
-  .note{font-size:.85rem;color:var(--ink-soft);}
-  iframe{width:100%;height:760px;border:0;display:block;}
-  .fallback{text-align:center;margin:10px 0 0;font-size:.9rem;}
-  footer.site{border-top:1px solid var(--line);padding:22px 0 40px;text-align:center;font-size:.82rem;color:var(--ink-soft);}
-  footer.site a{color:var(--ink-soft);text-decoration:underline;}
-  @media (max-width:640px){
-    .steps{grid-template-columns:1fr;}
-    .sticky{display:block;position:fixed;inset-inline:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(248,249,250,.96);border-top:1px solid var(--line);text-align:center;}
-    .sticky a{display:block;background:var(--blue-deep);color:#fff;text-decoration:none;font-weight:700;padding:13px;border-radius:999px;}
-    main{padding-bottom:70px;}
-  }
   html{scroll-behavior:smooth;}
+  html{background:#1B4AB8;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Heebo',sans-serif;color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;
+    background:linear-gradient(160deg,var(--b1) 0%,var(--b2) 100%);
+    min-height:100vh;position:relative;overflow-x:hidden;
+  }
+  body::before,body::after{content:"";position:fixed;border-radius:50%;background:rgba(255,255,255,.08);pointer-events:none;z-index:0;}
+  body::before{width:520px;height:520px;top:-180px;inset-inline-start:-160px;}
+  body::after{width:600px;height:600px;bottom:-240px;inset-inline-end:-200px;background:rgba(255,255,255,.06);}
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 18px;}
+  a{color:inherit;}
+
+  .hero{text-align:center;padding:26px 0 4px;}
+  .pill{display:inline-block;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.55);color:#fff;font-weight:700;font-size:.95rem;padding:6px 18px;border-radius:999px;}
+  .logo{display:block;width:84px;height:84px;margin:16px auto 10px;border-radius:20px;box-shadow:0 10px 28px rgba(0,0,0,.28);}
+  h1{margin:0;font-size:clamp(2rem,8vw,2.9rem);font-weight:800;line-height:1.15;}
+  .sub{margin:10px auto 0;max-width:30em;color:#E8EEFF;font-size:1.02rem;font-weight:500;}
+
+  .perks{list-style:none;margin:16px auto 0;padding:0;display:grid;gap:8px;max-width:420px;}
+  .perks li{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.4);border-radius:16px;padding:8px 14px;font-weight:700;font-size:1rem;text-align:start;}
+  .perks li::before{content:"✓";flex:none;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#fff;color:var(--blue);font-size:.95rem;font-weight:800;}
+
+  .join{margin:22px 0 0;background:#fff;color:var(--ink);border-radius:26px;padding:20px 16px 18px;box-shadow:0 18px 44px rgba(8,30,90,.35);scroll-margin-top:16px;}
+  .join h2{margin:0 0 4px;font-size:1.35rem;font-weight:800;color:var(--ink);text-align:center;}
+  .join .lead{margin:0 0 10px;text-align:center;color:var(--ink-soft);font-size:.93rem;}
+  .join iframe{width:100%;height:1180px;border:0;display:block;}
+  @media (min-width:700px){.join iframe{height:1040px;}}
+  .fallback{text-align:center;margin:6px 0 0;font-size:.88rem;color:var(--ink-soft);}
+  .fallback a{color:var(--blue);font-weight:700;}
+  .note{text-align:center;font-size:.82rem;color:#E8EEFF;margin:12px 4px 0;}
+  .more-link{display:block;text-align:center;margin:14px 0 4px;color:#fff;font-weight:700;text-decoration:none;opacity:.95;}
+  .more-link span{display:inline-block;border-bottom:2px solid rgba(255,255,255,.6);padding-bottom:1px;}
+
+  .info{padding:22px 0 24px;}
+  .info h2{font-size:1.25rem;font-weight:800;margin:26px 0 10px;text-align:center;}
+  .steps{display:grid;gap:10px;margin:0;padding:0;list-style:none;}
+  .steps li{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.35);border-radius:18px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start;}
+  .steps b{flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--blue);font-weight:800;}
+  .steps strong{display:block;font-weight:800;}
+  .steps span{color:#E8EEFF;font-size:.95rem;}
+  .card{background:#fff;color:var(--ink);border-radius:20px;padding:16px 18px;margin:10px 0;}
+  .card h3{margin:0 0 4px;font-size:1.02rem;font-weight:800;color:var(--ink);}
+  .card p{margin:0;color:var(--ink-soft);font-size:.95rem;}
+  .back{display:block;margin:22px auto 0;max-width:320px;text-align:center;background:#fff;color:var(--blue);font-weight:800;text-decoration:none;padding:14px;border-radius:999px;box-shadow:0 8px 22px rgba(8,30,90,.28);}
+
+  footer{position:relative;z-index:1;text-align:center;font-size:.8rem;color:#CFE0FF;padding:10px 18px 90px;}
+  footer a{color:#CFE0FF;}
+
+  .sticky{position:fixed;inset-inline:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(27,74,184,.96),rgba(27,74,184,.0));display:none;transition:opacity .2s;}
+  .sticky.show{display:block;}
+  .sticky a{display:block;max-width:420px;margin:0 auto;background:#fff;color:var(--blue);text-align:center;text-decoration:none;font-weight:800;padding:13px;border-radius:999px;box-shadow:0 8px 22px rgba(8,30,90,.35);}
 </style>
 </head>
 <body>
-
-<header class="site">
-  <div class="wrap site-bar">
-    <span class="brand">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 24V9a3 3 0 0 1 3-3h15l18 18-18 18-18-18Z" fill="#1565C0"/>
-        <circle cx="16" cy="16" r="4" fill="#fff"/>
-      </svg>
-      קופון
-    </span>
-  </div>
-</header>
 
 <main class="wrap">
 
   <section class="hero">
     <span class="pill">בהזמנה בלבד · 30 מקומות</span>
+    <img class="logo" src="images/early-logo.png" alt="קופון" width="84" height="84">
     <h1>מי ראשון מתנסה?</h1>
-    <p>אפליקציית "קופון" החדשה, עם קודי הנחה ומבצעים לחנויות בישראל ובעולם, עוד לא פתוחה לציבור.</p>
-    <p><strong>30 המשתתפים הראשונים</strong> מקבלים גישה מוקדמת לאנדרואיד, ויכולים להשפיע על הגרסה הסופית. המקומות מוגבלים ונמלאים לפי סדר ההצטרפות.</p>
-
+    <p class="sub">אפליקציית "קופון" החדשה: קודי הנחה ומבצעים לחנויות בישראל ובעולם.</p>
     <ul class="perks">
       <li>גישה מוקדמת, לפני כולם</li>
       <li>השפעה על הגרסה הסופית</li>
       <li>אנדרואיד · Google Play</li>
     </ul>
-    <a class="cta-main" href="#join">להצטרפות</a>
-
-    <ol class="steps">
-      <li><b>1</b><strong>השארת כתובת</strong>מילוי הטופס עם כתובת ה-Gmail של חשבון Google.</li>
-      <li><b>2</b><strong>קישור הצטרפות</strong>קישור אישי נשלח במייל, אחרי הוספה לרשימת המשתתפים.</li>
-      <li><b>3</b><strong>התקנה ושימוש</strong>התקנה מ-Google Play ושימוש באפליקציה לאורך שבועיים.</li>
-    </ol>
   </section>
 
-  <section class="card" id="join">
-    <h2>הצטרפות לגישה מוקדמת</h2>
-    <p><strong>ההשתתפות כוללת:</strong> שבועיים של גישה מוקדמת לאפליקציה, לפני שהיא נפתחת לציבור, ואפשרות להשפיע על מה שייכנס לגרסה הסופית. כדי ליהנות מהגישה עד הסוף, האפליקציה נשארת מותקנת והחשבון נשאר רשום לבדיקה לאורך התקופה.</p>
-    <p>מתאים לטלפון אנדרואיד עם Google Play בלבד. הכתובת צריכה להיות החשבון שמחובר ל-Google Play בטלפון.</p>
+  <section class="join" id="join">
+    <h2>הצטרפות</h2>
+    <p class="lead">כתובת Gmail של חשבון Google שמחובר ל-Google Play בטלפון. הקישור האישי נשלח במייל.</p>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5bcL71Ono2L5uEd_O-YE--efRdKLJcCvbnZ4Gu5ne0iKiGA/viewform?embedded=true" title="טופס הצטרפות לגישה מוקדמת" loading="lazy">טוען…</iframe>
     <p class="fallback">הטופס לא נטען? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5bcL71Ono2L5uEd_O-YE--efRdKLJcCvbnZ4Gu5ne0iKiGA/viewform" target="_blank" rel="noopener">לפתיחה בחלון נפרד</a></p>
   </section>
 
-  <p class="note">הכתובת משמשת רק להוספה לרשימת המשתתפים ב-Google Play ולעדכונים על הניסוי. פרטים נוספים ב<a href="terms.html#privacy">מדיניות הפרטיות</a>.</p>
+  <p class="note">הכתובת משמשת רק להוספה לרשימת המשתתפים ב-Google Play ולעדכונים על הניסוי.</p>
+  <a class="more-link" href="#info"><span>מידע נוסף ↓</span></a>
+
+  <section class="info" id="info">
+    <h2>איך זה עובד</h2>
+    <ol class="steps">
+      <li><b>1</b><div><strong>השארת כתובת</strong><span>מילוי הטופס עם כתובת ה-Gmail של חשבון Google.</span></div></li>
+      <li><b>2</b><div><strong>קישור הצטרפות</strong><span>קישור אישי נשלח במייל, אחרי הוספה לרשימת המשתתפים.</span></div></li>
+      <li><b>3</b><div><strong>התקנה ושימוש</strong><span>התקנה מ-Google Play ושימוש באפליקציה לאורך שבועיים.</span></div></li>
+    </ol>
+
+    <h2>מה כולל הניסוי</h2>
+    <div class="card"><h3>גישה לפני כולם</h3><p>שבועיים של גישה מוקדמת לאפליקציה, לפני שהיא נפתחת לציבור, ואפשרות להשפיע על מה שייכנס לגרסה הסופית.</p></div>
+    <div class="card"><h3>מה נדרש</h3><p>האפליקציה נשארת מותקנת והחשבון נשאר רשום לבדיקה לאורך התקופה. אין חובה להשתמש בה כל יום.</p></div>
+
+    <h2>שאלות נפוצות</h2>
+    <div class="card"><h3>מתי מגיע הקישור?</h3><p>במייל, בימים הקרובים, ברגע שהגרסה מוכנה להתקנה.</p></div>
+    <div class="card"><h3>האם יש עלות?</h3><p>לא. האפליקציה חינמית.</p></div>
+    <div class="card"><h3>מתאים ל-iPhone?</h3><p>כרגע אנדרואיד בלבד, עם Google Play.</p></div>
+    <div class="card"><h3>מה קורה עם הכתובת?</h3><p>היא משמשת רק להוספה לרשימת המשתתפים ולעדכונים על הניסוי. פרטים ב<a href="terms.html#privacy" style="color:#1F57D6;font-weight:700">מדיניות הפרטיות</a>.</p></div>
+
+    <a class="back" href="#join">חזרה לטופס ↑</a>
+  </section>
 
 </main>
 
-<div class="sticky"><a href="#join">להצטרפות: 30 המקומות הראשונים</a></div>
-
-<footer class="site">
-  <div class="wrap">
-    <p><a href="terms.html">תנאי שימוש ופרטיות</a></p>
-    <p>© 2026 קופון. כל הזכויות שמורות.</p>
-  </div>
+<footer>
+  <a href="terms.html">תנאי שימוש ופרטיות</a> · © 2026 קופון
 </footer>
 
+<div class="sticky" id="sticky"><a href="#join">להצטרפות: 30 המקומות הראשונים</a></div>
+
+<script>
+  // הכפתור הצף מוצג רק כשהטופס מחוץ למסך
+  (function(){
+    var join=document.getElementById('join'), bar=document.getElementById('sticky');
+    if(!('IntersectionObserver' in window)){ bar.classList.add('show'); return; }
+    new IntersectionObserver(function(e){ bar.classList.toggle('show', !e[0].isIntersecting); },{threshold:0.15}).observe(join);
+  })();
+</script>
 </body>
 </html>

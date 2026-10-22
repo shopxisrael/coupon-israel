@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>גישה מוקדמת לאפליקציית קופון</title>
+<meta name="description" content="30 המשתתפים הראשונים מקבלים גישה מוקדמת לאפליקציית קופון לאנדרואיד.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-deep:#1565C0; --blue-mid:#1976D2; --blue-pale:#90CAF9;
+    --bg:#F8F9FA; --white:#ffffff; --ink:#102A43; --ink-soft:#486581;
+    --line:#D9E6F5; --radius:18px; --maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Rubik',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:var(--blue-deep);}
+  h1,h2{font-family:'Suez One',serif;font-weight:400;margin:0;color:var(--ink);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+  header.site{background:var(--white);border-bottom:1px solid var(--line);}
+  .site-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;}
+  .brand svg{width:30px;height:30px;}
+  nav.quick a{color:var(--ink-soft);text-decoration:none;font-size:.92rem;}
+  .hero{padding:44px 0 8px;}
+  .pill{display:inline-block;background:var(--blue-pale);color:var(--blue-deep);font-size:.8rem;font-weight:600;padding:4px 14px;border-radius:999px;margin-bottom:14px;}
+  .hero h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.2;margin-bottom:12px;}
+  .hero p{color:var(--ink-soft);margin:0 0 6px;max-width:58ch;font-size:1.02rem;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 8px;padding:0;list-style:none;}
+  .steps li{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;font-size:.94rem;color:var(--ink-soft);}
+  .steps b{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--blue-deep);color:#fff;font-size:.9rem;margin-bottom:8px;}
+  .steps strong{display:block;color:var(--ink);margin-bottom:2px;}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px 24px;margin:22px 0;}
+  .card h2{font-size:1.3rem;margin-bottom:6px;}
+  .card p{margin:0 0 10px;color:var(--ink-soft);font-size:.94rem;}
+  .note{font-size:.85rem;color:var(--ink-soft);}
+  iframe{width:100%;height:760px;border:0;display:block;}
+  .fallback{text-align:center;margin:10px 0 0;font-size:.9rem;}
+  footer.site{border-top:1px solid var(--line);padding:22px 0 40px;text-align:center;font-size:.82rem;color:var(--ink-soft);}
+  footer.site a{color:var(--ink-soft);text-decoration:underline;}
+  @media (max-width:640px){.steps{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-bar">
+    <a class="brand" href="onboarding.html">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 24V9a3 3 0 0 1 3-3h15l18 18-18 18-18-18Z" fill="#1565C0"/>
+        <circle cx="16" cy="16" r="4" fill="#fff"/>
+      </svg>
+      קופון
+    </a>
+    <nav class="quick"><a href="onboarding.html">לעמוד הבית</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <span class="pill">גישה מוקדמת · 30 מקומות</span>
+    <h1>מי ראשון מתנסה?</h1>
+    <p>אפליקציית "קופון" החדשה, עם קודי הנחה ומבצעים לחנויות בישראל ובעולם, עוד לא פתוחה לציבור.</p>
+    <p><strong>30 המשתתפים הראשונים</strong> מקבלים גישה מוקדמת לאנדרואיד, ויכולים להשפיע על הגרסה הסופית. המקומות מוגבלים ונמלאים לפי סדר ההצטרפות.</p>
+
+    <ol class="steps">
+      <li><b>1</b><strong>השארת כתובת</strong>מילוי הטופס עם כתובת ה-Gmail של חשבון Google.</li>
+      <li><b>2</b><strong>קישור הצטרפות</strong>קישור אישי נשלח במייל, אחרי הוספה לרשימת המשתתפים.</li>
+      <li><b>3</b><strong>התקנה ושימוש</strong>התקנה מ-Google Play, והשארת האפליקציה מותקנת כשבועיים.</li>
+    </ol>
+  </section>
+
+  <section class="card" id="join">
+    <h2>הצטרפות לגישה מוקדמת</h2>
+    <p>מתאים לטלפון אנדרואיד עם Google Play בלבד. הכתובת צריכה להיות החשבון שמחובר ל-Google Play בטלפון.</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5bcL71Ono2L5uEd_O-YE--efRdKLJcCvbnZ4Gu5ne0iKiGA/viewform?embedded=true" title="טופס הצטרפות לגישה מוקדמת" loading="lazy">טוען…</iframe>
+    <p class="fallback">הטופס לא נטען? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5bcL71Ono2L5uEd_O-YE--efRdKLJcCvbnZ4Gu5ne0iKiGA/viewform" target="_blank" rel="noopener">לפתיחה בחלון נפרד</a></p>
+  </section>
+
+  <p class="note">הכתובת משמשת רק להוספה לרשימת המשתתפים ב-Google Play ולעדכונים על הניסוי. פרטים נוספים ב<a href="terms.html#privacy">מדיניות הפרטיות</a>.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><a href="onboarding.html">חזרה לעמוד הבית</a> · <a href="terms.html">תנאי שימוש ופרטיות</a></p>
+    <p>© 2026 קופון. כל הזכויות שמורות.</p>
+  </div>
+</footer>
+
+</body>
+</html>

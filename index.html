@@ -389,8 +389,11 @@ nav.site-nav a:hover { background: var(--blue-faint); color: var(--blue-deep); }
   width: 100%;
   display: block;
 }
+/* כשיש שלושה כרטיסים, האחרון ממורכז ברוחב עמודה אחת */
+.shot-card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 14px); }
 @media (max-width: 700px) {
   .screenshots-grid { grid-template-columns: 1fr; }
+  .shot-card:last-child:nth-child(odd) { width: 100%; }
 }
 
 /* ==================== 4. FEATURES ==================== */
@@ -765,15 +768,6 @@ footer.site p { margin: 6px 0; }
       <h2>כך נראה התוסף בזמן קנייה</h2>
     </div>
     <div class="screenshots-grid">
-      <div class="shot-card">
-        <img
-          src="images/shot-popup-coupons.png"
-          alt="פופאפ קופון: רשימת הקופונים של חנות"
-          width="1280" height="800"
-          loading="lazy"
-        >
-        <div class="shot-label">רשימת הקופונים של החנות, והמספר על האייקון</div>
-      </div>
       <div class="shot-card">
         <img
           src="images/shot-code-revealed.png"

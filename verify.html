@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>אימות</title>
+<style>
+  html,body{margin:0;padding:0;background:transparent;overflow:hidden;font-family:system-ui,sans-serif;}
+  #w{display:flex;justify-content:center;padding:0;}
+</style>
+</head>
+<body>
+<div id="w"></div>
+<script>
+  // דף אימות אנטי-ספאם שנטען בתוך טופסי האפליקציה. הוא מציג את הווידג'ט של Cloudflare ומעביר לאפליקציה רק את הטוקן.
+  // מפתח האתר (ציבורי) מגיע בפרמטר ?k=... מהאפליקציה.
+  var key = new URLSearchParams(location.search).get('k') || '';
+  function send(m){ try { window.ReactNativeWebView.postMessage(JSON.stringify(m)); } catch (e) {} }
+  window.onTurnstileLoad = function () {
+    if (!key) { send({ t: 'error' }); return; }
+    turnstile.render('#w', {
+      sitekey: key,
+      appearance: 'interaction-only',   // בלתי נראה, ומוצג רק אם נדרשת אינטראקציה
+      callback: function (token) { send({ t: 'token', token: token }); send({ t: 'height', h: 0 }); },
+      'before-interactive-callback': function () { send({ t: 'height', h: 80 }); },
+      'expired-callback': function () { send({ t: 'expired' }); },
+      'error-callback': function () { send({ t: 'error' }); }
+    });
+  };
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+</body>
+</html>

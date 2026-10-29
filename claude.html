@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קופון ב-Claude: תיעוד השירות — קופון</title>
+<meta name="description" content="איך מחברים את קופון ל-Claude, מה השירות עושה, אילו נתונים הוא מקבל, ומידע לצוותי IT.">
+
+<!--
+  ============================================================
+  הגדרות לפני פרסום — ערכו את אובייקט CONFIG בתחתית הקובץ:
+  1. CONTACT_FORM_URL – לינק לטופס Google Forms ליצירת קשר
+  2. CONTACT_EMAIL    – אימייל גיבוי (ישמש אם אין טופס מוגדר)
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --blue-deep:#1565C0;
+    --blue-mid:#1976D2;
+    --blue-bright:#42A5F5;
+    --blue-pale:#90CAF9;
+    --bg:#F8F9FA;
+    --white:#ffffff;
+    --ink:#102A43;
+    --ink-soft:#486581;
+    --line:#D9E6F5;
+    --radius:18px;
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Rubik',sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue-deep);}
+  h1,h2{font-family:'Suez One',serif;font-weight:400;margin:0;color:var(--ink);}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  header.site{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+  .site-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:14px 0;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;
+  }
+  .brand svg{width:30px;height:30px;}
+  nav.quick{display:flex;gap:18px;font-size:.92rem;}
+  nav.quick a{color:var(--ink-soft);text-decoration:none;}
+  nav.quick a:hover{color:var(--blue-deep);}
+
+  .intro{padding:40px 0 6px;}
+  .intro h1{font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:10px;}
+  .intro p{color:var(--ink-soft);max-width:62ch;margin:0;}
+
+  .pagejump{
+    display:flex;gap:10px;margin:22px 0 8px;flex-wrap:wrap;
+  }
+  .pagejump a{
+    font-size:.86rem;font-weight:600;
+    background:var(--white);
+    border:1.5px solid var(--blue-pale);
+    color:var(--blue-deep);
+    padding:7px 16px;
+    border-radius:999px;
+    text-decoration:none;
+  }
+  .pagejump a:hover{background:var(--blue-pale);}
+
+  main{padding:18px 0 50px;}
+
+  .legal-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 28px 34px;
+    margin-bottom:28px;
+    scroll-margin-top:90px;
+  }
+  .legal-card h2{font-size:1.35rem;margin-bottom:6px;}
+  .legal-card .updated{font-size:.8rem;color:var(--ink-soft);margin-bottom:18px;display:block;}
+  .legal-card h3{
+    font-family:'Rubik',sans-serif;font-weight:700;font-size:.97rem;
+    color:var(--blue-deep);margin:20px 0 6px;
+  }
+  .legal-card p, .legal-card li{font-size:.94rem;color:var(--ink-soft);margin:0 0 8px;}
+  .legal-card ul{margin:0 0 8px;padding-inline-start:20px;}
+  .legal-card strong{color:var(--ink);}
+
+  .pill{
+    display:inline-block;background:var(--blue-pale);color:var(--blue-deep);
+    font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:999px;margin-bottom:14px;
+  }
+
+  .table-wrap{overflow-x:auto;margin:10px 0 16px;}
+  table.datatable{
+    width:100%;border-collapse:collapse;font-size:.88rem;
+  }
+  table.datatable th, table.datatable td{
+    text-align:right;padding:9px 12px;border-bottom:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+  table.datatable th{
+    color:var(--ink);font-weight:700;background:#F1F6FC;
+  }
+
+  footer.site{
+    border-top:1px solid var(--line);
+    padding:22px 0 40px;text-align:center;font-size:.82rem;color:var(--ink-soft);
+  }
+  footer.site a{color:var(--ink-soft);text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-bar">
+    <a class="brand" href="onboarding.html">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 24V9a3 3 0 0 1 3-3h15l18 18-18 18-18-18Z" fill="#1565C0"/>
+        <circle cx="16" cy="16" r="4" fill="#fff"/>
+      </svg>
+      קופון
+    </a>
+    <nav class="quick">
+      <a href="/coupon-israel/">חזרה לעמוד הבית</a>
+      <a id="contactNavLink" href="#" target="_blank" rel="noopener">יצירת קשר</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="intro">
+    <h1>קופון ב-Claude: קופונים, קודי הנחה ומבצעים בתוך השיחה</h1>
+    <p>תיעוד השירות: מה הוא עושה, איך מתחברים, אילו נתונים הוא מקבל, ומידע לצוותי IT וניהול.</p>
+    <div class="pagejump">
+      <a href="#what">מה זה</a>
+      <a href="#connect">איך מתחברים</a>
+      <a href="#privacy">פרטיות ונתונים</a>
+      <a href="#it">לצוותי IT</a>
+      <a href="#support">תמיכה</a>
+    </div>
+  </div>
+
+  <div class="legal-card" id="what">
+    <span class="pill">מה זה</span>
+    <h2>קופון ב-Claude</h2>
+    <span class="updated">עודכן לאחרונה: אוקטובר 2026</span>
+    <p>
+      קונקטור ל-Claude שמאפשר לחפש קופונים, קודי הנחה ומבצעים לחנויות אונליין בישראל ובעולם, בלי לצאת מהשיחה.
+      התוצאות מוצגות ככרטיסים עם כפתורים:
+    </p>
+    <ul>
+      <li><strong>חשיפת קוד:</strong> מציגה את הקוד, מעתיקה אותו אוטומטית, ופותחת את החנות בכרטיסייה חדשה.</li>
+      <li><strong>מעבר לאתר:</strong> להטבות שאין להן קוד.</li>
+      <li><strong>תנאים:</strong> פותח את התנאים של כל הטבה.</li>
+    </ul>
+
+    <h3>דוגמאות לשאלות</h3>
+    <ul>
+      <li>"יש קופון ל-iHerb?"</li>
+      <li>"תראה לי משלוח חינם ב-KSP"</li>
+      <li>"מה התנאים של הקופון של 10% בבוקינג?"</li>
+      <li>"אילו חנויות פופולריות כרגע?"</li>
+    </ul>
+
+    <h3>מה השירות עושה ומה לא</h3>
+    <ul>
+      <li>קריאה בלבד: חיפוש והצגה של קופונים ומבצעים. אין כתיבה, אין רכישות ואין העברות כספים.</li>
+      <li>אין חשבון משתמש ואין זיהוי משתמשים.</li>
+      <li>אין גישה לקבצים, לזיכרון או להיסטוריית השיחות ב-Claude. השירות מקבל רק את פרטי החיפוש ש-Claude שולח (שם חנות או מילת מפתח).</li>
+      <li>הנתונים מתעדכנים כל שעה. אין הבטחה שכל הטבה בתוקף, כי התוקף נקבע על ידי החנות.</li>
+    </ul>
+
+    <h3>גילוי נאות</h3>
+    <p>
+      הקישורים לחנויות הם קישורי שיווק (Affiliate). קופון עשוי לקבל תגמול על רכישות שנעשות דרכם, והמחיר למשתמש אינו משתנה.
+    </p>
+  </div>
+
+  <div class="legal-card" id="connect">
+    <span class="pill">חיבור</span>
+    <h2>איך מתחברים</h2>
+    <ol>
+      <li>ב-Claude: <strong>Settings</strong> ← <strong>Connectors</strong> ← <strong>Add custom connector</strong> (או חיפוש "קופון" בספריית הקונקטורים, אם השירות פורסם בה).</li>
+      <li>שם: <strong>קופון</strong>. כתובת: <strong dir="ltr">https://coupon-mcp.couponil.workers.dev/mcp</strong></li>
+      <li>בדף "אישור חיבור" שנפתח: לחיצה על <strong>אישור</strong>. לא נדרש חשבון, הרשמה או טוקן.</li>
+    </ol>
+  </div>
+
+  <div class="legal-card" id="privacy">
+    <span class="pill">פרטיות ונתונים</span>
+    <h2>פרטיות ונתונים</h2>
+    <ul>
+      <li>השירות מקבל את פרטי החיפוש ש-Claude שולח (שם חנות או מילת מפתח) ואת כתובת ה-IP של מי שפונה אליו (שרתי Claude, או המחשב של המשתמש כשהחיבור ישיר). פרטי החיפוש אינם נשמרים ואינם נרשמים. בעת אישור החיבור מתקבלים גם כתובת ה-IP וסוג הדפדפן של המשתמש.</li>
+      <li>תוכן השיחה עם Claude אינו מתקבל. אין חשבון משתמש ואין מזהה משתמש או שיחה.</li>
+      <li>לצורך אבטחה ותיקון תקלות נרשמים יומני הפעלה טכניים ב-Cloudflare, הכוללים כתובת IP, סוג הדפדפן או הלקוח, סוג הפעולה ותשובת השרת, למשך עד 3 ימים. תוכן השיחה ומילות החיפוש אינם נרשמים.</li>
+      <li>ספק התשתית: Cloudflare.</li>
+    </ul>
+    <p>
+      מדיניות הפרטיות המלאה: <a href="terms.html#privacy">תנאי השימוש ומדיניות הפרטיות</a>.
+    </p>
+  </div>
+
+  <div class="legal-card" id="it">
+    <span class="pill">צוותי IT</span>
+    <h2>לצוותי IT וניהול</h2>
+    <ul>
+      <li><strong>אימות:</strong> OAuth 2.0 (רישום דינמי של לקוח, PKCE). אישור בלחיצה, ללא פרטי כניסה.</li>
+      <li><strong>הרשאות:</strong> קריאה בלבד. אין גישה לנתונים של הארגון או של המשתמש.</li>
+      <li><strong>נקודת קצה ציבורית אחת:</strong> <span dir="ltr">https://coupon-mcp.couponil.workers.dev/mcp</span></li>
+      <li><strong>יכולות:</strong> חיפוש קופונים, מבצעים ומשלוח חינם, חנויות פופולריות ופרטי קופון. כל הכלים מסומנים כקריאה בלבד.</li>
+    </ul>
+  </div>
+
+  <div class="legal-card" id="support">
+    <span class="pill">תמיכה</span>
+    <h2>תמיכה ויצירת קשר</h2>
+    <p>
+      לשאלות, דיווח על תקלה או בקשה להוספת חנות: <a id="contactLink" href="#" target="_blank" rel="noopener">טופס יצירת קשר</a>, או באימייל <a href="mailto:shopxisrael@gmail.com" dir="ltr">shopxisrael@gmail.com</a>.
+    </p>
+    <p>
+      תנאי השימוש והפרטיות: <a href="terms.html">terms.html</a>.
+    </p>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><a href="/coupon-israel/">חזרה לעמוד הבית</a> · <a href="terms.html">תנאי שימוש ופרטיות</a></p>
+    <p>© 2026 קופון. כל הזכויות שמורות.</p>
+  </div>
+</footer>
+
+<script>
+  const CONFIG = {
+    CONTACT_FORM_URL: "https://forms.gle/i2QVGtDnQ6gMVhi38",
+    CONTACT_EMAIL: "shopxisrael@gmail.com"
+  };
+  const contactHref = CONFIG.CONTACT_FORM_URL || ('mailto:' + CONFIG.CONTACT_EMAIL);
+  document.getElementById('contactNavLink').href = contactHref;
+  document.getElementById('contactLink').href = contactHref;
+</script>
+</body>
+</html>

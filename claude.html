@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>קופון ב-Claude: תיעוד השירות — קופון</title>
-<meta name="description" content="איך מחברים את קופון ל-Claude, מה השירות עושה, אילו נתונים הוא מקבל, ומידע לצוותי IT.">
+<title>Coupon for Claude: service documentation — קופון</title>
+<meta name="description" content="How to connect Coupon to Claude, what the service does, what data it receives, and information for IT teams. Hebrew version below (עברית בהמשך הדף).">
 
 <!--
   ============================================================
@@ -140,13 +140,98 @@
       קופון
     </a>
     <nav class="quick">
-      <a href="/coupon-israel/">חזרה לעמוד הבית</a>
-      <a id="contactNavLink" href="#" target="_blank" rel="noopener">יצירת קשר</a>
+      <a href="#hebrew">עברית</a>
+      <a href="/coupon-israel/">Home / עמוד הבית</a>
+      <a id="contactNavLink" href="#" target="_blank" rel="noopener">Contact / יצירת קשר</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
+  <div class="intro">
+    <h1>Coupon for Claude: coupons, discount codes and deals inside the chat</h1>
+    <p>Service documentation: what it does, how to connect, what data it receives, and information for IT and administrators. <a href="#hebrew">העברית בהמשך הדף</a>.</p>
+    <div class="pagejump">
+      <a href="#en-what">What it is</a>
+      <a href="#en-connect">How to connect</a>
+      <a href="#en-privacy">Privacy and data</a>
+      <a href="#en-it">For IT</a>
+      <a href="#en-support">Support</a>
+      <a href="#hebrew">עברית</a>
+    </div>
+  </div>
+
+  <div class="legal-card" id="en-what" lang="en" dir="ltr">
+    <span class="pill">What it is</span>
+    <h2>Coupon for Claude</h2>
+    <span class="updated">Last updated: October 2026</span>
+    <p>A connector for Claude that finds coupons, discount codes and deals for online stores in Israel and worldwide, without leaving the conversation. Results appear as cards with buttons:</p>
+    <ul>
+      <li><strong>Reveal code:</strong> shows the code, copies it automatically and opens the store in a new tab.</li>
+      <li><strong>Go to site:</strong> for offers that have no code.</li>
+      <li><strong>Terms:</strong> opens the terms of each offer.</li>
+    </ul>
+    <h3>Example questions</h3>
+    <ul>
+      <li>"Is there a coupon for iHerb?"</li>
+      <li>"Show me free-shipping deals at KSP"</li>
+      <li>"What are the terms of the 10% coupon at Booking?"</li>
+      <li>"Which stores are popular right now?"</li>
+    </ul>
+    <p>Results are shown in Hebrew. You can ask in Hebrew or English.</p>
+    <h3>What the service does and does not do</h3>
+    <ul>
+      <li>Read-only: it searches and displays coupons and deals. It does not write data, make purchases or move money.</li>
+      <li>There are no user accounts, and users are not identified.</li>
+      <li>It has no access to your files, memory or chat history in Claude. It receives only the search details Claude sends (a store name or a keyword).</li>
+      <li>Data is refreshed hourly. There is no guarantee that an offer is still valid, because validity is set by the store.</li>
+    </ul>
+    <h3>Disclosure</h3>
+    <p>Links to stores are affiliate links. Coupon may earn a commission on purchases made through them, at no extra cost to you.</p>
+  </div>
+
+  <div class="legal-card" id="en-connect" lang="en" dir="ltr">
+    <span class="pill">Connect</span>
+    <h2>How to connect</h2>
+    <ol>
+      <li>In Claude: <strong>Settings</strong> &rarr; <strong>Connectors</strong> &rarr; <strong>Add custom connector</strong> (or search "Coupon" in the connectors directory once it is listed there).</li>
+      <li>Name: <strong>Coupon</strong>. URL: <strong>https://coupon-mcp.couponil.workers.dev/mcp</strong></li>
+      <li>On the "Approve connection" page that opens, click <strong>Approve</strong>. No account, sign-up or token is needed.</li>
+    </ol>
+  </div>
+
+  <div class="legal-card" id="en-privacy" lang="en" dir="ltr">
+    <span class="pill">Privacy and data</span>
+    <h2>Privacy and data</h2>
+    <ul>
+      <li>The service receives the search details that Claude sends (a store name or a keyword) and the IP address of whoever connects to it (Claude's servers, or the user's own computer when the connection is direct). Search details are not stored and not logged. When a connection is approved, the user's IP address and browser type are also received.</li>
+      <li>Conversation content is not received. There are no user accounts and no user or conversation identifiers.</li>
+      <li>For security and troubleshooting, technical operation logs are kept at Cloudflare. They include an IP address, the browser or client type, the type of operation and the server response, for up to 3 days. Conversation content and search terms are not logged.</li>
+      <li>Infrastructure provider: Cloudflare.</li>
+    </ul>
+    <p>Full privacy policy: <a href="terms.html#privacy-en">Privacy summary (English)</a> and <a href="terms.html#privacy">the full policy (Hebrew)</a>.</p>
+  </div>
+
+  <div class="legal-card" id="en-it" lang="en" dir="ltr">
+    <span class="pill">IT</span>
+    <h2>For IT and administrators</h2>
+    <ul>
+      <li><strong>Authentication:</strong> OAuth 2.0 (dynamic client registration, PKCE). Approval by a single click, no credentials.</li>
+      <li><strong>Permissions:</strong> read-only. No access to organization or user data.</li>
+      <li><strong>One public endpoint:</strong> https://coupon-mcp.couponil.workers.dev/mcp</li>
+      <li><strong>Capabilities:</strong> search coupons, deals and free shipping, popular stores, coupon details. All tools are marked read-only.</li>
+    </ul>
+  </div>
+
+  <div class="legal-card" id="en-support" lang="en" dir="ltr">
+    <span class="pill">Support</span>
+    <h2>Support and contact</h2>
+    <p>Questions, bug reports or store requests: <a class="contactLink" href="#" target="_blank" rel="noopener">contact form</a>, or email <a href="mailto:shopxisrael@gmail.com">shopxisrael@gmail.com</a>.</p>
+    <p>Terms of use and privacy policy: <a href="terms.html">terms.html</a> (Hebrew; English privacy summary included).</p>
+  </div>
+
+  <div id="hebrew" lang="he" dir="rtl" style="scroll-margin-top:90px;">
+
 
   <div class="intro">
     <h1>קופון ב-Claude: קופונים, קודי הנחה ומבצעים בתוך השיחה</h1>
@@ -235,18 +320,21 @@
     <span class="pill">תמיכה</span>
     <h2>תמיכה ויצירת קשר</h2>
     <p>
-      לשאלות, דיווח על תקלה או בקשה להוספת חנות: <a id="contactLink" href="#" target="_blank" rel="noopener">טופס יצירת קשר</a>, או באימייל <a href="mailto:shopxisrael@gmail.com" dir="ltr">shopxisrael@gmail.com</a>.
+      לשאלות, דיווח על תקלה או בקשה להוספת חנות: <a class="contactLink" href="#" target="_blank" rel="noopener">טופס יצירת קשר</a>, או באימייל <a href="mailto:shopxisrael@gmail.com" dir="ltr">shopxisrael@gmail.com</a>.
     </p>
     <p>
       תנאי השימוש והפרטיות: <a href="terms.html">terms.html</a>.
     </p>
   </div>
 
+
+  </div>
+
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <p><a href="/coupon-israel/">חזרה לעמוד הבית</a> · <a href="terms.html">תנאי שימוש ופרטיות</a></p>
+    <p><a href="/coupon-israel/">Home / עמוד הבית</a> · <a href="terms.html">Terms and privacy / תנאי שימוש ופרטיות</a></p>
     <p>© 2026 קופון. כל הזכויות שמורות.</p>
   </div>
 </footer>
@@ -258,7 +346,7 @@
   };
   const contactHref = CONFIG.CONTACT_FORM_URL || ('mailto:' + CONFIG.CONTACT_EMAIL);
   document.getElementById('contactNavLink').href = contactHref;
-  document.getElementById('contactLink').href = contactHref;
+  document.querySelectorAll('.contactLink').forEach(function(a){ a.href = contactHref; });
 </script>
 </body>
 </html>
